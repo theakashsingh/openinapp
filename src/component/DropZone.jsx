@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import "./dropzone.css";
 import { useDispatch } from "react-redux";
 import { removeCSV, uploadCSV } from "../redux/features/uploadSlice";
+import papaparse from "papaparse";
 
 const DropZone = () => {
   const [file, setFile] = useState(null);
@@ -9,55 +10,40 @@ const DropZone = () => {
 
   const dispatch = useDispatch();
 
+  const convertCsvToJson = (csvData) => {
+    papaparse.parse(csvData, {
+      header: true,
+      dynamicTyping: true,
+      skipEmptyLines: true,
+      complete: (result) => {
+        // console.log(result.data);
+        dispatch(uploadCSV(result.data))
+      },
+      error: (error) => {
+        console.error('CSV parsing error:', error.message);
+      },
+    });
+  };
+
   const handleDragOver = e => {
     e.preventDefault();
   };
   const handleDrop = e => {
     e.preventDefault();
-    console.log(e);
     setFile(e.dataTransfer.files[0]);
     const dragFile = e.dataTransfer.files[0];
 
     if (dragFile) {
-      const reader = new FileReader();
-      reader.onload = e => {
-        const csvString = e.target.result;
-        const jsonData = parseCSV(csvString);
-        setFile(jsonData);
-        dispatch(uploadCSV(jsonData));
-      };
-
-      reader.readAsText(dragFile);
+     convertCsvToJson(dragFile)
     }
   };
 
-  const parseCSV = csvString => {
-    const rows = csvString.split("\n");
-    const headers = rows[0].split(",");
 
-    return rows.slice(1).map(row => {
-      const values = row.split(",");
-      return headers.reduce((obj, header, index) => {
-        obj[header.trim()] = values[index].trim();
-        return obj;
-      }, {});
-    });
-  };
+  
 
   const handleOnChange = (e) =>{
     const inputFile = e.target.files[0];
-
-    if (inputFile) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        const csvString = e.target.result;
-        const jsonData = parseCSV(csvString);
-        dispatch(uploadCSV(jsonData))
-        setFile(jsonData)
-      };
-
-      reader.readAsText(inputFile);
-    }
+    convertCsvToJson(inputFile)
   }
   console.log(file);
 
