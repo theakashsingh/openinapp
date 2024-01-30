@@ -1,104 +1,110 @@
-.loginpage{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    background-color: #F8FAFF;
+.loginpage {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color: #f8faff;
 }
 
-.left_side{
-    flex-basis: 50%;
-    height: 100%;
+.left_side {
+  flex-basis: 50%;
+  height: 100%;
 }
-.left_inside{
-    height: 100%;
-    width: 100%;
-    background-color: #605BFF;
-    clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.login_icon{
-   position: absolute;
-   top: 54.32px;
-   left: 61.03px;
-}
-.base{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 72px;
-    line-height: 87.77px;
-    color: #FFFFFF;
-    display: inline-block;
-    margin-left: 30%;
+.left_inside {
+  height: 100%;
+  width: 100%;
+  background-color: #605bff;
+  clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
-.social_icon{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 299px;
-    position: absolute;
-    top: 90%;
-    left: 22%;
+.login_icon {
+  position: absolute;
+  top: 54.32px;
+  left: 61.03px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login_icon span:nth-child(2) {
+  position: absolute;
+  z-index: 1;
+}
+.base {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 87.77px;
+  color: #ffffff;
+  display: inline-block;
+  margin-left: 30%;
 }
 
-.right_side{
-    flex-basis: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding-left: 10%;
-    position: relative;
+.social_icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 299px;
+  position: absolute;
+  top: 90%;
+  left: 22%;
 }
 
-.mobile_login_header{
-    width: 100%;
-    height: 80px;
-    background-color: #605BFF;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: none;
-    align-items: center;
-    padding: 32px;
+.right_side {
+  flex-basis: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+  position: relative;
 }
 
-.mobile_login_title{
-    font-family: Nunito, sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 27.28px;
-    color: #FAFAFB;
+.mobile_login_header {
+  width: 100%;
+  height: 80px;
+  background-color: #605bff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  align-items: center;
+  padding: 32px;
 }
 
-.mobile_social_icons{
-    width: 100%;
-    position: absolute;
-    bottom: 30px;
-    left: 0;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
+.mobile_login_title {
+  font-family: Nunito, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 27.28px;
+  color: #fafafb;
+}
 
+.mobile_social_icons {
+  width: 100%;
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
 }
 
 @media only screen and (max-width: 720px) {
-    .left_side{
-        display: none;
-    }
-    .right_side{
-        flex-basis: 100%;
-        padding-left: 0;
-        justify-content: center;
-    }
-    .mobile_login_header{
-        display: flex;
-    }
-    .mobile_social_icons{
-        display: flex;
-    }
+  .left_side {
+    display: none;
+  }
+  .right_side {
+    flex-basis: 100%;
+    padding-left: 0;
+    justify-content: center;
+  }
+  .mobile_login_header {
+    display: flex;
+  }
+  .mobile_social_icons {
+    display: flex;
+  }
 }
