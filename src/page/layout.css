@@ -1,0 +1,17 @@
+.layout{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 218px 1fr;
+    position: relative;
+}
+
+/* .outlet{
+    background-color: #FAFAFB;
+} */
+
+@media only screen and (max-width: 720px) {
+    .layout{
+        grid-template-columns: 1fr;
+        place-content: center;
+    }
+}

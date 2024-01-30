@@ -1,26 +1,28 @@
 @keyframes slideIn {
   from {
-    height: 0;
+    transform: scaleY(0);
   }
   to {
-    height: 100%;
+    transform: scale(1);
   }
 }
 
 @keyframes slideOut {
   from {
-    height: 100%;
+    transform: scaleY(1);
   }
   to {
-    height: 0;
+    transform: scaleY(0);
   }
 }
 
 .dropdown_options.open  {
+  transform-origin: top;
   animation: slideIn 500ms ;
 }
 
 .dropdown_options.closed  {
+  transform-origin: bottom;
   animation: slideOut 500ms ;
 }
 
@@ -38,6 +40,7 @@
   align-items: center;
   background-color: #ffffff;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .dropdown_icon {

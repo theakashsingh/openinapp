@@ -30,6 +30,8 @@ const handleTagRemove = (rowIndex, tagIndex) => {
   return (
     <div className='table_wrapper'>
      <h1>Uploads</h1>
+     <div className="inside_table">
+
       <table>
         <thead>
           <tr>
@@ -74,6 +76,7 @@ const handleTagRemove = (rowIndex, tagIndex) => {
           ))}
         </tbody>
       </table>
+     </div>
     </div>
   );
 };
