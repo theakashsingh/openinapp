@@ -74,7 +74,10 @@ const LoginPage = () => {
           </div>
           <div className="mobile_login_title">Base</div>
         </div>
+        <div className="login_component">
+
         <Login />
+        </div>
         <MobileSocialIcons />
       </div>
     </div>

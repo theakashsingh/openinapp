@@ -73,6 +73,10 @@
   padding: 32px;
 }
 
+.login_component{
+    max-width: 90%;
+}
+
 .mobile_login_title {
   font-family: Nunito, sans-serif;
   font-size: 20px;
