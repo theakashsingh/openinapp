@@ -95,7 +95,7 @@ const Navigation = () => {
       <nav className="navigation_link">
         <ul>
           <li>
-            <NavLink to="/dashboard" className="link" activeClassName="active">
+            <NavLink to="/dashboard" className={({isActive})=>(isActive? "link active" : "link")} >
               <span>
                 <svg
                   width="20"
@@ -118,8 +118,7 @@ const Navigation = () => {
           <li>
             <NavLink
               to="/upload"
-              className="link"
-              activeClassName="active_link"
+              className={({isActive})=>(isActive? "link active" : "link")}
             >
               <span>
                 <svg
@@ -143,8 +142,7 @@ const Navigation = () => {
           <li>
             <NavLink
               to="/invoice"
-              className="link"
-              activeClassName="active_link"
+              className={({isActive})=>(isActive? "link active" : "link")}
             >
               <span>
                 <svg
@@ -169,9 +167,8 @@ const Navigation = () => {
           </li>
           <li>
             <NavLink
-              to="/schedule"
-              className="link"
-              activeClassName="active_link"
+              to={"/schedule"}
+              className={({isActive})=>(isActive? "link active" : "link")}
             >
               <span>
                 <svg
@@ -197,8 +194,7 @@ const Navigation = () => {
           <li>
             <NavLink
               to="/calender"
-              className="link"
-              activeClassName="active_link"
+              className={({isActive})=>(isActive? "link active" : "link")}
             >
               <span>
                 <svg
@@ -224,8 +220,7 @@ const Navigation = () => {
           <li>
             <NavLink
               to="/notification"
-              className="link"
-              activeClassName="active_link"
+              className={({isActive})=>(isActive? "link active" : "link")}
             >
               <span>
                 <svg
@@ -251,8 +246,7 @@ const Navigation = () => {
           <li>
             <NavLink
               to="/settings"
-              className="link"
-              activeClassName="active_link"
+              className={({isActive})=>(isActive? "link active" : "link")}
             >
               <span>
                 <svg
