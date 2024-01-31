@@ -1,4 +1,5 @@
 .login{
+    max-width: 100%;
     width: 422.64px;
     height: max-content;
 }
@@ -103,6 +104,11 @@
     cursor: pointer;
 }
 
+@media only screen and (max-width: 580px){
+    .login{
+        width:90vw;
+    }
+}
 
 
 
