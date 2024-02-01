@@ -64,6 +64,7 @@
 
 .option {
   padding: 8px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s;
   text-align: start;
