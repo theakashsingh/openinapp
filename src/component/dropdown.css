@@ -66,6 +66,7 @@
   padding: 8px;
   cursor: pointer;
   transition: background-color 0.3s;
+  text-align: start;
 }
 
 .option:hover {
